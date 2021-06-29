@@ -417,16 +417,6 @@ func (inst *Instagram) Login() (err error) {
 		return
 	}
 
-	err = inst.sendAdID()
-	if err != nil {
-		return
-	}
-
-	err = inst.contactPrefill()
-	if err != nil {
-		return
-	}
-
 	result, err := json.Marshal(
 		map[string]interface{}{
 			"guid":                inst.uuid,
